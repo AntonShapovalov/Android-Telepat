@@ -1,12 +1,16 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+def ext = rootProject.ext
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion ext.compileSdkVersion
+    buildToolsVersion ext.buildToolsVersion
     defaultConfig {
         applicationId "ru.org.adons.telepat"
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion ext.minSdkVersion
+        targetSdkVersion ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -21,10 +25,18 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+    // kotlin
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+    // support library
+    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
+    compile "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+    // unit testing
+    testCompile "junit:junit:$junitVersion"
+    androidTestCompile "com.android.support:support-annotations:$supportLibraryVersion"
+    androidTestCompile "com.android.support.test:runner:$testRunnerVersion"
+    // rx-java
+    compile "io.reactivex:rxandroid:$rxAndroidVersion"
+    compile "io.reactivex:rxjava:$rxJavaVersion"
+    compile "com.trello:rxlifecycle:$rxLifeCycleVersion"
+    compile "com.trello:rxlifecycle-components:$rxLifeCycleVersion"
 }

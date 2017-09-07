@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="RtlHardcoded">
+
+    <TextView
+        android:id="@+id/textRole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/select_role"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOk"
+        app:layout_constraintLeft_toLeftOf="@+id/textRole"
+        app:layout_constraintRight_toRightOf="@+id/textRole"
+        app:layout_constraintTop_toBottomOf="@+id/textRole">
+
+        <RadioButton
+            android:id="@+id/radioButtonServer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/server_role"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonClient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/client_role"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonOk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@android:string/ok"
+        android:textColor="@android:color/white"
+        android:theme="@style/ColoredButtonBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/textRole"
+        app:layout_constraintRight_toRightOf="@+id/textRole"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
+</android.support.constraint.ConstraintLayout>
