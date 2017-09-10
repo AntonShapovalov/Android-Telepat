@@ -11,4 +11,8 @@ interface IMainListener {
 
     fun hideProgress()
 
+    fun showServerFragment()
+
+    fun showClientFragment()
+
 }

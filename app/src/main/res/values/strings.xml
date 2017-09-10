@@ -1,6 +1,7 @@
-<resources>
+ <resources>
     <string name="app_name">Telepat</string>
     <string name="select_role">Select Role</string>
     <string name="server_role">Server</string>
     <string name="client_role">Client</string>
+    <string name="number_placeholder">"?"</string>
 </resources>

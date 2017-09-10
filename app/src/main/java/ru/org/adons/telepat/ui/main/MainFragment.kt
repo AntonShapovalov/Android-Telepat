@@ -2,7 +2,6 @@ package ru.org.adons.telepat.ui.main
 
 import android.app.Activity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +24,6 @@ class MainFragment : BaseFragment<IMainListener>() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? = inflater
             .inflate(R.layout.fragment_main, container, false)
 
-
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         buttonOk.setOnClickListener { selectRole() }
@@ -33,8 +31,8 @@ class MainFragment : BaseFragment<IMainListener>() {
 
     private fun selectRole() {
         when (radioGroup.checkedRadioButtonId) {
-            R.id.radioButtonServer -> Log.d("TAG", "radioButtonServer")
-            else -> Log.d("TAG", "radioButtonClient")
+            R.id.radioButtonClient -> listener?.showClientFragment()
+            else -> listener?.showServerFragment()
         }
     }
 
