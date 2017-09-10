@@ -8,17 +8,16 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_main.*
 import ru.org.adons.telepat.R
 import ru.org.adons.telepat.ui.activity.BaseFragment
-import ru.org.adons.telepat.ui.activity.IMainListener
 
 /**
  * Main screen, allow to select Server or Client role
  */
-class MainFragment : BaseFragment<IMainListener>() {
+class MainFragment : BaseFragment() {
 
     @Suppress("OverridingDeprecatedMember", "DEPRECATION")
     override fun onAttach(activity: Activity?) {
         super.onAttach(activity)
-        activity?.let { setListener(activity, IMainListener::class.java) }
+        activity?.let { setListener(activity) }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? = inflater

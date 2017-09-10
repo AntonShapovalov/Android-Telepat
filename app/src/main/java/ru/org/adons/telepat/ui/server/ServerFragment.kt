@@ -7,17 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import ru.org.adons.telepat.R
 import ru.org.adons.telepat.ui.activity.BaseFragment
-import ru.org.adons.telepat.ui.activity.IMainListener
 
 /**
  * Server screen, display random number, which client must guess
  */
-class ServerFragment : BaseFragment<IMainListener>() {
+class ServerFragment : BaseFragment() {
 
     @Suppress("OverridingDeprecatedMember", "DEPRECATION")
     override fun onAttach(activity: Activity?) {
         super.onAttach(activity)
-        activity?.let { setListener(activity, IMainListener::class.java) }
+        activity?.let { setListener(activity) }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? = inflater

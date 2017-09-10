@@ -4,12 +4,11 @@ import android.content.Context
 import com.trello.rxlifecycle.components.RxFragment
 
 /**
- * Base class for all Fragments
- * @param <T> - activity, must implement [IMainListener]
+ * Base class for all Fragments of [MainActivity]
  */
-abstract class BaseFragment<T : IMainListener> : RxFragment() {
+abstract class BaseFragment : RxFragment() {
 
-    protected var listener: T? = null
+    protected var listener: IMainListener? = null
 
     override fun onDetach() {
         listener = null
@@ -20,10 +19,9 @@ abstract class BaseFragment<T : IMainListener> : RxFragment() {
      * Set Activity as listener on fragment's events
      *
      * @param context Host Activity
-     * @param tClass  listener class, which host activity must implement
      */
-    protected fun <V : Context> setListener(context: V, tClass: Class<T>) {
-        listener = tClass.cast(context)
+    protected fun setListener(context: Context) {
+        listener = IMainListener::class.java.cast(context)
     }
 
 }
