@@ -4,4 +4,7 @@
     <string name="server_role">Server</string>
     <string name="client_role">Client</string>
     <string name="number_placeholder">"?"</string>
+    <string name="server_font_size">Server font size:</string>
+    <string name="success">Success:</string>
+    <string name="failure">Failure:</string>
 </resources>

@@ -29,6 +29,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
     // support library
     compile "com.android.support:appcompat-v7:$supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$supportLibraryVersion"
     compile "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
     // unit testing
     testCompile "junit:junit:$junitVersion"

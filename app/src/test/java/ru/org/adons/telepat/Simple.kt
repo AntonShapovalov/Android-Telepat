@@ -10,8 +10,6 @@ import org.junit.Assert.assertEquals
 class Simple {
 
     @Test
-    fun test() {
-        assertEquals(4, (2 + 2).toLong())
-    }
+    fun test() = assertEquals(4, (2 + 2).toLong())
 
 }

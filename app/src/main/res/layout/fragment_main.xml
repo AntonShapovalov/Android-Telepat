@@ -43,7 +43,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/client_role"/>
-
     </RadioGroup>
 
     <Button
@@ -53,7 +52,7 @@
         android:layout_marginTop="8dp"
         android:text="@android:string/ok"
         android:textColor="@android:color/white"
-        android:theme="@style/ColoredButtonBlue"
+        android:theme="@style/ColoredButtonAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@+id/textRole"
         app:layout_constraintRight_toRightOf="@+id/textRole"
