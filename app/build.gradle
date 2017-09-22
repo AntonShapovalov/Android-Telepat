@@ -27,6 +27,10 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     // kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+    // architecture components
+    compile "android.arch.lifecycle:runtime:1.0.0"
+    compile "android.arch.lifecycle:extensions:$archLifecycleVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$archLifecycleVersion"
     // support library
     compile "com.android.support:appcompat-v7:$supportLibraryVersion"
     compile "com.android.support:recyclerview-v7:$supportLibraryVersion"
