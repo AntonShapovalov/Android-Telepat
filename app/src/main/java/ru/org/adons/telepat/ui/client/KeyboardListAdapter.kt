@@ -29,7 +29,7 @@ class KeyboardListAdapter(private val onKeyClick: (value: Int) -> Unit) : Recycl
     }
 
     override fun onBindViewHolder(holder: KeyViewHolder, position: Int) {
-        val view = if (holder.itemViewType == GUESS_CODE) holder.itemView.buttonGuess else holder.itemView.button
+        val view = if (holder.itemViewType == GUESS_CODE) holder.itemView.buttonGuess else holder.itemView.buttonKey
         val value = items[position]
         view.text = when (value) {
             REMOVE_CODE -> "C"

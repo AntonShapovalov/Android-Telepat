@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 def ext = rootProject.ext
@@ -44,4 +45,9 @@ dependencies {
     compile "io.reactivex:rxjava:$rxJavaVersion"
     compile "com.trello:rxlifecycle:$rxLifeCycleVersion"
     compile "com.trello:rxlifecycle-components:$rxLifeCycleVersion"
+    // dagger
+    compile "com.google.dagger:dagger:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kaptTest "com.google.dagger:dagger-compiler:$daggerVersion"
+    kaptAndroidTest "com.google.dagger:dagger-compiler:$daggerVersion"
 }

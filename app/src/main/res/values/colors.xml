@@ -4,7 +4,7 @@
     <color name="colorPrimary">@color/grey_900</color>
     <color name="colorPrimaryDark">@android:color/black</color>
     <color name="colorAccent">@color/light_blue_a400</color>
-    <!-- palette colors -->
+    <!-- palette colors: a700 - white content, 50 - a400 - black content -->
     <color name="grey_900">#212121</color>
     <color name="light_blue_50">#E1F5FE</color>
     <color name="light_blue_a100">#80D8FF</color>

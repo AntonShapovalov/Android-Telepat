@@ -1,27 +1,28 @@
 package ru.org.adons.telepat.ext
 
 import android.app.Activity
-import android.app.Fragment
 import android.app.FragmentTransaction
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentActivity
 import ru.org.adons.telepat.R
-import ru.org.adons.telepat.ui.activity.MainActivity
+import ru.org.adons.telepat.ui.activity.MAIN_FRAGMENT_TAG
 
 /**
  * Extensions for [Activity]
  */
 
-fun Activity.getFragment(tag: String): Fragment? = fragmentManager.findFragmentByTag(tag)
+fun FragmentActivity.getFragment(tag: String): Fragment? = supportFragmentManager.findFragmentByTag(tag)
 
-fun Activity.addFragment(containerId: Int, fragment: Fragment, tag: String) = fragmentManager
+fun FragmentActivity.addFragment(containerId: Int, fragment: Fragment, tag: String) = supportFragmentManager
         .beginTransaction().add(containerId, fragment, tag).commit()
 
-fun Activity.replaceFragment(
+fun FragmentActivity.replaceFragment(
         containerId: Int = R.id.fragment_container,
         newFragment: Fragment,
         tag: String,
-        backStackTag: String = MainActivity.MAIN_FRAGMENT_TAG
+        backStackTag: String = MAIN_FRAGMENT_TAG
 ) {
-    fragmentManager.beginTransaction().also {
+    supportFragmentManager.beginTransaction().also {
         it.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
         it.addToBackStack(backStackTag)
         it.replace(containerId, newFragment, tag)

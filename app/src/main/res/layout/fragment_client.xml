@@ -1,73 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true"
-            android:fitsSystemWindows="true">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="RtlHardcoded,HardcodedText">
 
-        <TextView
-            android:id="@+id/textSuccess"
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/success"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintHorizontal_chainStyle="packed"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/textSuccessScore"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <TextView
-            android:id="@+id/textSuccessScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:text="0"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="@+id/textSuccess"
-            app:layout_constraintLeft_toRightOf="@+id/textSuccess"
-            app:layout_constraintRight_toLeftOf="@+id/textFailure"
-            app:layout_constraintTop_toTopOf="@+id/textSuccess"/>
-
-        <TextView
-            android:id="@+id/textFailure"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginStart="24dp"
-            android:text="@string/failure"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintLeft_toRightOf="@+id/textSuccessScore"
-            app:layout_constraintRight_toLeftOf="@+id/textFailureScore"
-            app:layout_constraintTop_toTopOf="@+id/textSuccess"/>
-
-        <TextView
-            android:id="@+id/textFailureScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:text="0"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="@+id/textFailure"
-            app:layout_constraintLeft_toRightOf="@+id/textFailure"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textFailure"/>
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                tools:text="Score: 0/0"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        </android.support.v7.widget.Toolbar>
 
         <TextView
             android:id="@+id/textNumber"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/background_line_accent"
             android:freezesText="true"
@@ -76,9 +51,9 @@
             android:padding="4dp"
             android:text="@string/number_placeholder"
             android:textSize="28sp"
-            app:layout_constraintLeft_toLeftOf="@+id/textSuccess"
-            app:layout_constraintRight_toRightOf="@+id/textFailureScore"
-            app:layout_constraintTop_toBottomOf="@+id/textSuccess"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/gridKeyboard"
@@ -98,10 +73,8 @@
             android:id="@+id/textServerFontSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginStart="16dp"
             android:text="@string/server_font_size"
             app:layout_constraintBottom_toBottomOf="@+id/buttonFontDec"
             app:layout_constraintHorizontal_chainStyle="packed"
@@ -114,8 +87,6 @@
             style="@style/Widget.AppCompat.Light.ActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="0dp"
             android:text="+"
             android:textColor="@color/colorAccent"
             android:textSize="24sp"
@@ -128,15 +99,13 @@
             android:id="@+id/textFontSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="0dp"
             android:text="120sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintBottom_toBottomOf="@+id/buttonFontDec"
             app:layout_constraintLeft_toRightOf="@+id/buttonFontDec"
             app:layout_constraintRight_toLeftOf="@+id/buttonFontInc"
             app:layout_constraintTop_toTopOf="@+id/buttonFontDec"
-            app:layout_constraintVertical_bias="0.5"/>
+            />
 
         <Button
             android:id="@+id/buttonFontDec"
