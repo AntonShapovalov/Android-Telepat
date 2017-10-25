@@ -12,6 +12,7 @@ import ru.org.adons.telepat.R
 import ru.org.adons.telepat.ext.initGrid
 import ru.org.adons.telepat.ui.activity.ViewModelFactory
 import ru.org.adons.telepat.ui.activity.mainComponent
+import ru.org.adons.telepat.ui.client.KeyboardListAdapter.Companion.GUESS_CODE
 import ru.org.adons.telepat.ui.client.KeyboardListAdapter.Companion.REMOVE_CODE
 import javax.inject.Inject
 
@@ -45,6 +46,7 @@ class ClientFragment : Fragment() {
         with(textNumber) {
             text = when (value) {
                 REMOVE_CODE -> "?"
+                GUESS_CODE -> text.toString()
                 else -> if (text == "?") s else text.toString().plus(s)
             }
         }
