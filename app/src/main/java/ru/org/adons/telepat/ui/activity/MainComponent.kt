@@ -19,6 +19,6 @@ annotation class ViewScope
 @Component(dependencies = arrayOf(AppComponent::class))
 interface MainComponent {
 
-    fun inject(searchFragment: ClientFragment)
+    fun inject(clientFragment: ClientFragment)
 
 }
