@@ -25,10 +25,10 @@ class MainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? = inflater
             .inflate(R.layout.fragment_main, container, false)
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // build application component in background
-        subscription = Completable.fromAction { activity.mainComponent() }
+        subscription = Completable.fromAction { activity?.mainComponent() }
                 .subscribeOn(Schedulers.io())
                 .doOnCompleted { log("MainComponent build finished") }
                 .subscribe({ buttonOk.setOnClickListener { selectRole() } }, { it.printStackTrace() })
@@ -40,11 +40,9 @@ class MainFragment : Fragment() {
         super.onDestroyView()
     }
 
-    private fun selectRole() {
-        when (radioGroup.checkedRadioButtonId) {
-            R.id.radioButtonClient -> activity.showClientFragment()
-            else -> activity.showServerFragment()
-        }
+    private fun selectRole() = when (radioGroup.checkedRadioButtonId) {
+        R.id.radioButtonClient -> activity?.showClientFragment()
+        else -> activity?.showServerFragment()
     }
 
 }

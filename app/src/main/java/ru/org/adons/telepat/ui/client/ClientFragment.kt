@@ -28,14 +28,14 @@ class ClientFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? = inflater
             .inflate(R.layout.fragment_client, container, false)
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         gridKeyboard.initGrid(adapter = KeyboardListAdapter { onKeyClick(it) }, columnCount = 3)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        activity.mainComponent().inject(this)
+        activity?.mainComponent()?.inject(this)
         viewModel = ViewModelProviders.of(this, factory).get(ClientViewModel::class.java)
         viewModel.score.observe(this, Observer { textScore.text = it })
         viewModel.getCurrentScore()
