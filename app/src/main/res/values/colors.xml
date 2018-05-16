@@ -6,9 +6,6 @@
     <color name="colorAccent">@color/light_blue_a400</color>
     <!-- palette colors: a700 - white content, 50 - a400 - black content -->
     <color name="grey_900">#212121</color>
-    <color name="light_blue_50">#E1F5FE</color>
-    <color name="light_blue_a100">#80D8FF</color>
     <color name="light_blue_a200">#40C4FF</color>
     <color name="light_blue_a400">#00B0FF</color>
-    <color name="light_blue_a700">#0091EA</color>
 </resources>

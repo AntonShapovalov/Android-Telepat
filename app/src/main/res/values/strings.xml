@@ -6,6 +6,4 @@
     <string name="score">Score: %1$d/%2$d</string>
     <string name="number_placeholder">"?"</string>
     <string name="server_font_size">Server font size:</string>
-    <string name="success">Success:</string>
-    <string name="failure">Failure:</string>
-</resources>
+ </resources>
